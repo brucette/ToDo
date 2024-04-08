@@ -1,18 +1,9 @@
 const form = document.querySelector('#taskForm');
 const task = form['task'];
-const deleteBtns = document.querySelectorAll('.deleteBtn');
 const list = document.querySelector('#list');
-//const taskList = list.querySelectorAll('li');
 
 // Eventlisteners
 form.addEventListener('submit', addTaskToList);
-
-//taskList.forEach(li => li.addEventListener('click', (event) =>
-//changeBackGround(event)));
-
-// deleteBtns.forEach(btn => btn.addEventListener('click', (event) =>
-// deleteTask(event)));
-
 
 // Functions
 function addTaskToList(event) {
@@ -25,24 +16,23 @@ function addTaskToList(event) {
         <button class="deleteBtn">X</button>
         </li>
     `
-    // let newItem = document.createElement('li');
-    // let itemText = document.createTextNode(task.value);
-    // newItem.appendChild(itemText);
-    // let button = document.createElement('button');
-    // let buttonText = document.createTextNode('X');
-    // button.appendChild(buttonText);
-    // newItem.appendChild(button);
-    // list.appendChild(newItem);
-
     form.reset();
-    //console.log({deleteBtns});
-    //console.log({taskList});
-    const taskItem = list.querySelector('li:last-of-type');
-    taskItem.addEventListener('click', changeBackGround);
+    // const taskItem = list.querySelector('li:last-of-type');
+    // taskItem.addEventListener('click', changeBackGround);
 
-    const deleteBtn = document.querySelector('.deleteBtn:last-of-type');
-    console.log(deleteBtn);
-    deleteBtn.addEventListener('click', deleteTask);
+    // const deleteBtn = document.querySelector('.deleteBtn:last-of-type');
+    // console.log(deleteBtn);
+    // deleteBtn.addEventListener('click', deleteTask);
+
+    // get all tasks and listen for click
+    const taskList = list.querySelectorAll('li');
+    taskList.forEach(li => li.addEventListener('click',
+    changeBackGround));
+
+    // get all delete buttons and listen for click
+    const deleteBtns = list.querySelectorAll('.deleteBtn');
+    deleteBtns.forEach(btn => btn.addEventListener('click', 
+    deleteTask));
 }
 
 function changeBackGround(event) {
@@ -51,11 +41,15 @@ function changeBackGround(event) {
 }
 
 function deleteTask(event) {
-    //event.target.remove();
-   //console.log({deleteBtns});
     console.log('hej!');
+
+    // these two do the same thing - remove the button:
+    //event.target.remove();
     //console.log(this.remove());
-    //console.log(event.target.parentNode.remove());
+
+    
+    // removes both task and button:
+    event.target.parentNode.remove();
     //event.stopPropagation();
 }
 
