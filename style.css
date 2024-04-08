@@ -1,3 +1,16 @@
 li {
    text-decoration: none; 
+   border: 1px solid lightgray;
+   border-radius: 0.5rem;
+   box-shadow: 1px 3px 2px lightgray;
+   padding: 0.5rem;
+   margin-bottom: 1rem;
+   display: flex;
+   justify-content: space-between;
+}
+
+.completed {
+    background-color: green;
+    color: azure;
+    text-decoration: line-through;
 }
