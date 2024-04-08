@@ -1,16 +1,27 @@
-li {
-   text-decoration: none; 
-   border: 1px solid lightgray;
-   border-radius: 0.5rem;
-   box-shadow: 1px 3px 2px lightgray;
-   padding: 0.5rem;
-   margin-bottom: 1rem;
-   display: flex;
-   justify-content: space-between;
+* {
+    box-sizing: border-box;
+}
+
+li, .container {
+    border-radius: 0.5rem;
+    box-shadow: 1px 3px 2px lightgray;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
 }
 
 .completed {
-    background-color: green;
+    background-color: rgba(19, 154, 19, 0.5);
     color: azure;
     text-decoration: line-through;
+}
+
+.deleteBtn {
+    background-color: transparent;
+    color: darkred;
+    text-decoration: none; 
+    border: transparent;
+    float: right;
 }
